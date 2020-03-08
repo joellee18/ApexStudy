@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <! using robot>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <! for mobile screen rendering>
+  </head>
+  <body>
+  <div class="titleBlock"></div>
+  <h1>APEX Study</h1>
+    
+    <form id="frm1" action="/action_page.php">
+      <fieldset>
+      <legend> &nbsp Task &nbsp </legend><br>
+        <label for="task">Name Task &nbsp </label>
+        <input type="text" id="task" name="task"><br><br>
+        <label for="taskType">Task Type &nbsp </label>
+        <select id="taskType" name="taskType">
+          <option value="assignment">Assignment</option>
+          <option value="webwork">Webwork</option>
+          <option value="prelab">Pre-Lab</option>
+          <option value="essay">Essay</option>
+          <option value="report">Report</option>
+          <option value="notes">Notes</option>
+          <option value="study">Study</option>
+        </select><br><br>
+        <label for="course">Course &nbsp </label>
+        <input type="text" id="cours" name="cours"><br><br>
+        <label for="dueDate">Date &nbsp </label>
+        <input type="date" id="dueDate" name="dueDate"><br><br>
+        <label for="priority">Priority &nbsp </label>
+        <input type="range" id="priority" name="priority" min="0" max="5"><br><br>   
+        <input type="button" onclick="myFunction()" value="Add Task"><br><br> 
+        
+        <p id="demo"></p>
+        
+        <script>
+        function myFunction() {
+          var x = document.getElementById("frm1");
+          var text = "";
+          var i;
+          for (i = 0; i < x.length ;i++) {
+            text += x.elements[i].value + "<br>";
+          }
+          document.getElementById("demo").innerHTML = text;
+        }
+				</script>
+        
+      </fieldset><br><br> 
+    </form>
+
+  </body>
+
+</html>
