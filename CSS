@@ -82,10 +82,8 @@ table {
   position: absolute;
   top: 180px;
   left: 60px;
-  border: solid;
-  border-color: white;
-  border-width: 3px;
-    
+  padding: 5px;
+  background:  #37376b;
 }
 th, td {
   padding: 10px;
