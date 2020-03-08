@@ -90,12 +90,7 @@
       <table id="sort" class="w3-table">
         <tr>
           <td><b>Name</b></td>
-          <td><b>Type</b></td>
           <td><b>Course</b></td>
-          <td><b>Difficulty</b></td>
-          <td><b>Date</b></td>
-          <td><b>Duration</b></td>
-          <td><b>Priority</b></td>
           <td><b>Weight</b></td>
         </tr>
       </table>
@@ -314,14 +309,41 @@
         var table = document.getElementById("sort");
         var rowCount = table.rows.length;
         var row = table.insertRow(rowCount);
-        row.insertCell(0).innerHTML = ctask.value;
-        row.insertCell(1).innerHTML = typeWeight;
-        row.insertCell(2).innerHTML = ccourse.value;
-        row.insertCell(3).innerHTML = diffWeight;
-        row.insertCell(4).innerHTML = dueWeight;
-        row.insertCell(5).innerHTML = durWeight;
-        row.insertCell(6).innerHTML = priorityWeight;
-        row.insertCell(7).innerHTML = totalWeight;
+        row.insertCell(0).innerHTML = sort[0].name;
+        row.insertCell(1).innerHTML = sort[0].course;
+        row.insertCell(2).innerHTML = sort[0].value;
+        
+        row.insertCell(0).innerHTML = sort[1].name;
+        row.insertCell(1).innerHTML = sort[1].course;
+        row.insertCell(2).innerHTML = sort[1].value;
+        
+        row.insertCell(0).innerHTML = sort[2].name;
+        row.insertCell(1).innerHTML = sort[2].course;
+        row.insertCell(2).innerHTML = sort[2].value;
+        
+        row.insertCell(0).innerHTML = sort[3].name;
+        row.insertCell(1).innerHTML = sort[3].course;
+        row.insertCell(2).innerHTML = sort[3].value;
+        
+        row.insertCell(0).innerHTML = sort[4].name;
+        row.insertCell(1).innerHTML = sort[4].course;
+        row.insertCell(2).innerHTML = sort[4].value;
+        
+        row.insertCell(0).innerHTML = sort[5].name;
+        row.insertCell(1).innerHTML = sort[5].course;
+        row.insertCell(2).innerHTML = sort[5].value;
+        
+        row.insertCell(0).innerHTML = sort[6].name;
+        row.insertCell(1).innerHTML = sort[6].course;
+        row.insertCell(2).innerHTML = sort[6].value;
+        
+        row.insertCell(0).innerHTML = sort[7].name;
+        row.insertCell(1).innerHTML = sort[7].course;
+        row.insertCell(2).innerHTML = sort[7].value;
+        
+        row.insertCell(0).innerHTML = sort[8].name;
+        row.insertCell(1).innerHTML = sort[8].course;
+        row.insertCell(2).innerHTML = sort[8].value;
       }
 		
     </script>
