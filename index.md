@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+<!--DOCTYPE html-->
 <html>
 
   <head>
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
-    <! using robot>
+    <!-- using robot-->
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <! for mobile screen rendering>
+      <!-- for mobile screen rendering-->
   </head>
 
   <body>
