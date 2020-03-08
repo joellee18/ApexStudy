@@ -37,13 +37,17 @@ label {
   color: white;
 }
 
-legend {
+h2 {
+  position: absolute;
+  top: 100px;
+  left: 60px;
   font-family: 'Roboto';
   font-size: 30px;
   font-style: normal;
   font-weight: bold;
   color: white;
 }
+
 
 fieldset {
 	position: absolute;
@@ -61,19 +65,24 @@ fieldset {
 results {
 	position: absolute;
   left:400px;
-  top: 100px;
-  display: block;
-  padding-top: 1em;
-  padding-bottom: 1em;
-  padding-left: 1em;
-  padding-right: 1em;
+  top: 0px;
 }
 
 body {
   background-color: #201740;
 }
 
-p {
+table { 
+  position: absolute;
+  top: 180px;
+  left: 60px;
+  border: solid;
+  border-color: white;
+  
+}
+th, td {
+  padding: 10px;
+  text-align: left;
   font-family: 'Roboto';
   font-size: 15px;
   font-style: normal;
