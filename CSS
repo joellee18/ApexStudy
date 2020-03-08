@@ -64,7 +64,13 @@ fieldset {
 
 results {
 	position: absolute;
-  left:400px;
+  left:350px;
+  top: 0px;
+}
+
+opt {
+	position: absolute;
+  left:900px;
   top: 0px;
 }
 
