@@ -6,7 +6,7 @@
     <!-- using robot-->
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <!-- for mobile screen rendering-->
-  </head>
+  
   <style> h1 {
   font-family: 'Roboto';
   position: absolute;
@@ -105,7 +105,7 @@ th, td {
 }
 
 </style>
-
+</head>
   <body>
     <div class="titleBlockUpper"></div>
     <div class="titleBlockLower"></div>
