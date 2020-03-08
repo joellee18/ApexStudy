@@ -11,47 +11,48 @@
   <div class="titleBlockLower"></div>
   <h1>APEX Study</h1>
     
-    <form id="frm1" action="/action_page.php">
-      <fieldset>
-      <legend> &nbsp Task &nbsp </legend><br>
-        <label for="task">Name &nbsp </label>
-        <input type="text" id="task" name="task"><br><br>
-        <label for="taskType">Type &nbsp </label>
-        <select id="taskType" name="taskType">
-          <option value="assignment">Assignment</option>
-          <option value="webwork">Webwork</option>
-          <option value="prelab">Pre-Lab</option>
-          <option value="essay">Essay</option>
-          <option value="report">Report</option>
-          <option value="notes">Notes</option>
-          <option value="study">Study</option>
-        </select><br><br>
-        <label for="course">Course &nbsp </label>
-        <input type="text" id="cours" name="cours"><br><br>
-        <label for="dueDate">Date &nbsp </label>
-        <input type="date" id="dueDate" name="dueDate"><br><br>
-        <label for="priority">Priority &nbsp </label>
-        <input type="range" id="priority" name="priority" min="0" max="5"><br><br>   
-        <input type="button" onclick="myFunction()" value="Add Task"> <br><br> 
-
-        <p>You have added <span id="demo2">0</span> tasks.</p>
-
-        <p id="demo1"></p>
-
-        <script>
-        function myFunction() {
-          var x = document.getElementById("frm1");
-          var text = "";
-          var i;
-          for (i = 0; i < x.length ;i++) {
-            text += x.elements[i].value + "<br>";
-          }
-          document.getElementById("demo1").innerHTML = text;
-        }
-				</script>
-
-      </fieldset><br><br> 
-    </form>
+  <form id="frm1" action="/action_page.php">
+    <fieldset>
+    <legend> &nbsp Task &nbsp </legend><br>
+    <label for="task">Name &nbsp </label>
+    <input type="text" id="task" name="task"><br><br>
+    <label for="taskType">Type &nbsp </label>
+    <select id="taskType" name="taskType">
+      <option value="assignment">Assignment</option>
+      <option value="webwork">Webwork</option>
+      <option value="prelab">Pre-Lab</option>
+      <option value="essay">Essay</option>
+      <option value="report">Report</option>
+      <option value="notes">Notes</option>
+      <option value="study">Study</option>
+    </select><br><br>
+    <label for="course">Course &nbsp </label>
+    <input type="text" id="cours" name="cours"><br><br>
+    <label for="dueDate">Date &nbsp </label>
+    <input type="date" id="dueDate" name="dueDate"><br><br>
+    <label for="priority">Priority &nbsp </label>
+    <input type="range" id="priority" name="priority" min="0" max="5"><br><br>   
+    <input type="button" onclick="myFunction()" value="Add Task"> <br><br> 
+   </fieldset><br><br> 
+  </form>
+  <results>
+   <legend> &nbsp Tasks Queue &nbsp </legend><br>
+  <p id="demo1"></p>
+  <p id="demo2"></p>
+  </results>
+    
+     <script>
+       function myFunction() {
+         var x = document.getElementById("frm1");
+         var text = "";
+         var i;
+         for (i = 0; i < x.length ;i++) {
+           text += x.elements[i].value + "<br>";
+         }
+         document.getElementById("demo1").innerHTML = text;
+         document.getElementById("demo2").innerHTML = text;
+       }
+    </script>
 
   </body>
 
