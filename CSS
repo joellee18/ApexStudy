@@ -39,7 +39,7 @@ label {
 
 h2 {
   position: absolute;
-  top: 100px;
+  top: 110px;
   left: 60px;
   font-family: 'Roboto';
   font-size: 30px;
@@ -78,7 +78,8 @@ table {
   left: 60px;
   border: solid;
   border-color: white;
-  
+  border-width: 3px;
+    
 }
 th, td {
   padding: 10px;
