@@ -1,151 +1,107 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <! using robot>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <! for mobile screen rendering>
   </head>
+
   <body>
-  <div class="titleBlockUpper"></div>
-  <div class="titleBlockLower"></div>
-  <h1>APEX Study</h1>
-    
-  <form id="frm1" action="/action_page.php">
-    <fieldset>
-    <legend> &nbsp Task &nbsp </legend><br>
-    <label for="task">Name &nbsp </label>
-    <input type="text" id="task" name="task"><br><br>
-    <label for="taskType">Type &nbsp </label>
-    <select id="taskType" name="taskType">
-      <option value="">(Select option)</option>
-      <option value="Assignment">Assignment</option>
-      <option value="Webwork">Webwork</option>
-      <option value="PreLab">Pre-Lab</option>
-      <option value="Essay">Essay</option>
-      <option value="Project">Project</option>
-      <option value="Report">Report</option>
-      <option value="Notes">Notes</option>
-      <option value="Study">Study</option>
-    </select><br><br>
-    <label for="course">Course &nbsp </label>
-    <input type="text" id="course" name="course"><br><br>
-    <label for="courseDiff">Difficulty &nbsp </label>
-    <input type="range" id="courseDiff" name="courseDiff" min="1" max="10"><br><br>
-    <label for="dueDate">Date &nbsp </label>
-    <input type="date" id="dueDate" name="dueDate"><br><br>
-    <label for="Priority">Priority &nbsp </label>
-    <input type="range" id="priority" name="priority" min="1" max="3"><br><br>   
-    <input type="button" onclick="buttonClick()" value="Add Task"> <br><br> 
-   </fieldset><br><br> 
-  </form>
-  <results>
-   <legend> &nbsp Optimized List &nbsp </legend><br>
-  <p id="demo1"></p>
-  <p id="demo2"></p>
-  <p id="demo3"></p>
-  <p id="demo4"></p>
-  <p id="demo5"></p>
-  <p id="demo6"></p>
-  <p id="demo7"></p>
-  <p id="demo8"></p>
-  <p id="demo9"></p>
-  <p id="demo10"></p>
-  
-  </results>
-    
-     <script>
-     var taskDetailCount = 0;     //no. of details in a task * no. of tasks 
-     function buttonClick() {
-         var x = document.getElementById("frm1");
-         var text = "";
-         var i;
-         for (i = 1; i < x.length-1 ;i++) {
-           text += x.elements[i].value + "<br>";
-           taskDetailCount++;
-           }
-     var taskCount = (taskDetailCount/6);
-       switch (taskCount){
-         case 1:
-           document.getElementById("demo1").innerHTML = text;
-           break;
-            
-           case 2:
-           	 if (text == document.getElementById("demo1").innerHTML) {
-             		if (confirm("Alert: You have already added this task. Would you like to add it again?"))
-                	document.getElementById("demo2").innerHTML = text;
-             }
-             else
-             		document.getElementById("demo2").innerHTML = text;
-             break;
-           case 3:
-             if (text == document.getElementById("demo1").innerHTML || text == document.getElementById("demo2").innerHTML) {
-             		if (confirm("Alert: You have already added this task. Would you like to add it again?"))
-                	document.getElementById("demo3").innerHTML = text;
-             }
-             else
-             		document.getElementById("demo3").innerHTML = text;
-             break;
-           case 4:
-             if (text == document.getElementById("demo1").innerHTML || text == document.getElementById("demo2").innerHTML || text == document.getElementById("demo3").innerHTML) {
-             		if (confirm("Alert: You have already added this task. Would you like to add it again?"))
-                	document.getElementById("demo4").innerHTML = text;
-             }
-             else
-             		document.getElementById("demo4").innerHTML = text;
-             break;
-           case 5:
-             if (text == document.getElementById("demo1").innerHTML || text == document.getElementById("demo2").innerHTML || text == document.getElementById("demo3").innerHTML || text == document.getElementById("demo4").innerHTML) {
-             		if (confirm("Alert: You have already added this task. Would you like to add it again?"))
-                	document.getElementById("demo5").innerHTML = text;
-             }
-             else
-             		document.getElementById("demo5").innerHTML = text;
-             break;
-           case 6:
-             if (text == document.getElementById("demo1").innerHTML || text == document.getElementById("demo2").innerHTML || text == document.getElementById("demo3").innerHTML || text == document.getElementById("demo4").innerHTML || text == document.getElementById("demo5").innerHTML) {
-             		if (confirm("Alert: You have already added this task. Would you like to add it again?"))
-                	document.getElementById("demo6").innerHTML = text;
-             }
-             else
-             		document.getElementById("demo6").innerHTML = text;
-             break;
-           case 7:
-             if (text == document.getElementById("demo1").innerHTML || text == document.getElementById("demo2").innerHTML || text == document.getElementById("demo3").innerHTML || text == document.getElementById("demo4").innerHTML || text == document.getElementById("demo5").innerHTML  || text == document.getElementById("demo6").innerHTML) {
-             		if (confirm("Alert: You have already added this task. Would you like to add it again?"))
-                	document.getElementById("demo7").innerHTML = text;
-             }
-             else
-             		document.getElementById("demo7").innerHTML = text;
-             break;
-           case 8:
-             if (text == document.getElementById("demo1").innerHTML || text == document.getElementById("demo2").innerHTML || text == document.getElementById("demo3").innerHTML || text == document.getElementById("demo4").innerHTML || text == document.getElementById("demo5").innerHTML  || text == document.getElementById("demo6").innerHTML || text == document.getElementById("demo7").innerHTML) {
-             		if (confirm("Alert: You have already added this task. Would you like to add it again?"))
-                	document.getElementById("demo8").innerHTML = text;
-             }
-             else
-             		document.getElementById("demo8").innerHTML = text;
-             break;
-           case 9:
-             if (text == document.getElementById("demo1").innerHTML || text == document.getElementById("demo2").innerHTML || text == document.getElementById("demo3").innerHTML || text == document.getElementById("demo4").innerHTML || text == document.getElementById("demo5").innerHTML  || text == document.getElementById("demo6").innerHTML || text == document.getElementById("demo7").innerHTML || text == document.getElementById("demo8").innerHTML) {
-             		if (confirm("Alert: You have already added this task. Would you like to add it again?"))
-                	document.getElementById("demo9").innerHTML = text;
-             }
-             else
-             		document.getElementById("demo9").innerHTML = text;
-             break;
-           case 10:
-             if (text == document.getElementById("demo1").innerHTML || text == document.getElementById("demo2").innerHTML || text == document.getElementById("demo3").innerHTML || text == document.getElementById("demo4").innerHTML || text == document.getElementById("demo5").innerHTML  || text == document.getElementById("demo6").innerHTML || text == document.getElementById("demo7").innerHTML || text == document.getElementById("demo8").innerHTML || text == document.getElementById("demo9").innerHTML) {
-             		if (confirm("Alert: You have already added this task. Would you like to add it again?"))
-                	document.getElementById("demo10").innerHTML = text;
-             }
-             else
-             		document.getElementById("demo10").innerHTML = text;
-             break;
-           }
-     }
-     
-     </script>
+    <div class="titleBlockUpper"></div>
+    <div class="titleBlockLower"></div>
+    <h1>APEX Study</h1>
+
+    <table>
+      <tr>
+        <td>
+          <h2> Task </h2>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="task">Name &nbsp </label></td>
+        <td><input type="text" id="task" name="task"></td>
+      </tr>
+      <tr>
+        <td><label for="taskType">Type &nbsp </label></td>
+        <td><select id="taskType" name="taskType">
+            <option value="">(Select option)</option>
+            <option value="Assignment">Assignment</option>
+            <option value="Webwork">Webwork</option>
+            <option value="PreLab">Pre-Lab</option>
+            <option value="Essay">Essay</option>
+            <option value="Project">Project</option>
+            <option value="Report">Report</option>
+            <option value="Notes">Notes</option>
+            <option value="Study">Study</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="course">Course &nbsp </label></td>
+        <td><input type="text" id="course" name="course"><br></td>
+      </tr>
+      <tr>
+        <td><label for="courseDiff">Difficulty &nbsp </label></td>
+        <td><input type="range" id="courseDiff" name="courseDiff" min="1" max="10"></td>
+      </tr>
+      <tr>
+        <td><label for="dueDate">Date &nbsp </label></td>
+        <td><input type="date" id="dueDate" name="dueDate"></td>
+      </tr>
+      <tr>
+        <td><label for="Priority">Priority &nbsp </label></td>
+        <td><input type="range" id="priority" name="priority" min="1" max="3"></td>
+      </tr>
+      <tr>
+        <td><input type="button" id="add" value="Add Task" onclick="adddata()"></td>
+      </tr>
+    </table>
+
+
+
+    <results>
+
+      <table id="input">
+        <tr>
+          <td>
+            <h2>Optimized List</h2>
+          </td>
+        </tr>
+        <tr>
+          <td><b>Name</b></td>
+          <td><b>Type</b></td>
+          <td><b>Course</b></td>
+          <td><b>Difficulty</b></td>
+          <td><b>Date</b></td>
+          <td><b>Priority</b></td>
+        </tr>
+      </table>
+
+    </results>
+
+    <script>
+      function adddata() {
+        var ctask = document.getElementById("task");
+        var ctype = document.getElementById("taskType");
+        var ccourse = document.getElementById("course");
+        var cdiff = document.getElementById("courseDiff");
+        var cdue = document.getElementById("dueDate");
+        var cpriority = document.getElementById("priority");
+        var inputTable = document.getElementById("input");
+        var rowCount = inputTable.rows.length;
+        var row = table.insertRow(rowCount);
+        row.insertCell(0).innerHTML = ctask.value;
+        row.insertCell(1).innerHTML = ctype.value;
+        row.insertCell(2).innerHTML = ccourse.value;
+        row.insertCell(3).innerHTML = cdiff.value;
+        row.insertCell(4).innerHTML = cdue.value;
+        row.insertCell(5).innerHTML = inputTable.value;
+      }
+
+
+    </script>
 
   </body>
 
