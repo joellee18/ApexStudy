@@ -1,7 +1,6 @@
 <!--DOCTYPE html-->
 <html>
-
-  <head>
+ <head>
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <!-- using robot-->
       <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -109,7 +108,7 @@ th, td {
   <body>
     <div class="titleBlockUpper"></div>
     <div class="titleBlockLower"></div>
-    <h1>PeakStudy</h1>
+    <h1>PEAK Study</h1>
     <h2> Add Task </h2>
     <table>
       <tr>
@@ -118,7 +117,7 @@ th, td {
       </tr>
       <tr>
         <td><label for="taskType">Type</label></td>
-        <td><select id="taskType" name="taskType">
+        <td><select id="taskType"name="taskType">
             <option value="">(Select option)</option>
             <option value="Assignment">Assignment</option>
             <option value="Webwork">Webwork</option>
@@ -169,7 +168,6 @@ th, td {
     </table>
 
 
-
     <results>
       <h2>Tasks</h2>
       <table id="input" class="w3-table">
@@ -189,12 +187,7 @@ th, td {
       <table id="sort" class="w3-table">
         <tr>
           <td><b>Name</b></td>
-          <td><b>Type</b></td>
           <td><b>Course</b></td>
-          <td><b>Difficulty</b></td>
-          <td><b>Date</b></td>
-          <td><b>Duration</b></td>
-          <td><b>Priority</b></td>
           <td><b>Weight</b></td>
         </tr>
       </table>
@@ -207,14 +200,18 @@ th, td {
         var idue = document.getElementById("dueDate");
         var idur = document.getElementById("duration");
         var ipriority = document.getElementById("priority");
-        var weights = [];
-        
+        const task = []; 
+        var taskAll = [];
+        var sort =[];
+				
+                
         var bigTable = [
     ["SENTINEL", "SENTINEL","SENTINEL","SENTINEL","SENTINEL","SENTINEL","SENTINEL"],
     ["SENTINEL", "SENTINEL","SENTINEL","SENTINEL","SENTINEL","SENTINEL","SENTINEL"],
     ];
     
       function adddata() {
+      	 
         var ctask = itask;
         var ctype = itype;
         var ccourse = icourse;
@@ -226,6 +223,8 @@ th, td {
         var rowCount = table.rows.length;
         var row = table.insertRow(rowCount);
         var flag = 0;
+        
+        
         
         //check if we are in initial row
         if (bigTable[0][0] == "SENTINEL" && bigTable[0][1] == "SENTINEL" && bigTable[0][2] == "SENTINEL" && bigTable[0][3] == "SENTINEL" && bigTable[0][4] == "SENTINEL" && bigTable[0][5] == "SENTINEL" && bigTable[0][6] == "SENTINEL") {
@@ -396,22 +395,24 @@ th, td {
             break;
         }
         var totalWeight = typeWeight+diffWeight+dueWeight+priorityWeight+durWeight;
-                  
-        weights.push(totalWeight);
-        weights.sort(function(a,b){return b - a});
-       	console.log(weights);
+
+        task.push({value: totalWeight, name: ctask.value, course: ccourse.value});  
+        taskAll=task.slice();
+        sort=taskAll.sort(function (a, b) {
+  return b.value - a.value;
+});
+       	console.log(taskAll);
                 
         var table = document.getElementById("sort");
         var rowCount = table.rows.length;
         var row = table.insertRow(rowCount);
-        row.insertCell(0).innerHTML = ctask.value;
-        row.insertCell(1).innerHTML = typeWeight;
-        row.insertCell(2).innerHTML = ccourse.value;
-        row.insertCell(3).innerHTML = diffWeight;
-        row.insertCell(4).innerHTML = dueWeight;
-        row.insertCell(5).innerHTML = durWeight;
-        row.insertCell(6).innerHTML = priorityWeight;
-        row.insertCell(7).innerHTML = totalWeight;
+        for (var i=0; i<=sort.length; i++) {
+        	row.insertCell(0).innerHTML = sort[i].name;
+        	row.insertCell(1).innerHTML = sort[i].course;
+        	row.insertCell(2).innerHTML = sort[i].value;
+        }
+        
+        
       }
 		
     </script>
