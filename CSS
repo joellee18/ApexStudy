@@ -72,3 +72,11 @@ results {
 body {
   background-color: #201740;
 }
+
+p {
+  font-family: 'Roboto';
+  font-size: 15px;
+  font-style: normal;
+  font-weight: normal;
+  color: white;
+}
