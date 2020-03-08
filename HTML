@@ -33,7 +33,12 @@
         <input type="range" id="priority" name="priority" min="0" max="5"><br><br>   
         <input type="button" onclick="myFunction()" value="Add Task"><br><br> 
         
-        <p id="demo"></p>
+        
+        <!-- Copied from "https://www.sitepoint.com/community/t/how-to-count-the-number-of-times-a-button-is-clicked/27287" -->
+        
+        <input type="button" value="Count" id="countButton" />
+
+        <p>The button was pressed <span id="displayCount">0</span> times.</p>
         
         <script>
         function myFunction() {
@@ -45,6 +50,15 @@
           }
           document.getElementById("demo").innerHTML = text;
         }
+        
+        var count = 0;
+          var button = document.getElementById("countButton");
+          var display = document.getElementById("displayCount");
+
+          button.onclick = function(){
+            count++;
+            display.innerHTML = count;
+          }
 				</script>
         
       </fieldset><br><br> 
