@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <! using robot>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <! for mobile screen rendering>
+  </head>
+
+  <body>
+    <div class="titleBlockUpper"></div>
+    <div class="titleBlockLower"></div>
+    <h1>APEX Study</h1>
+    <h2> Add Task </h2>
+    <table>
+      <tr>
+        <td><label for="task">Name &nbsp </label></td>
+        <td><input type="text" id="task" name="task"></td>
+      </tr>
+      <tr>
+        <td><label for="taskType">Type &nbsp </label></td>
+        <td><select id="taskType" name="taskType">
+            <option value="">(Select option)</option>
+            <option value="Assignment">Assignment</option>
+            <option value="Webwork">Webwork</option>
+            <option value="Pre-Lab">Pre-Lab</option>
+            <option value="Essay">Essay</option>
+            <option value="Project">Project</option>
+            <option value="Report">Report</option>
+            <option value="Notes">Notes</option>
+            <option value="Study">Study</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="course">Course &nbsp </label></td>
+        <td><input type="text" id="course" name="course"><br></td>
+      </tr>
+      <tr>
+        <td><label for="courseDiff">Difficulty &nbsp </label></td>
+        <td><input type="range" id="courseDiff" name="courseDiff" min="1" max="10"></td>
+      </tr>
+      <tr>
+        <td><label for="dueDate">Date &nbsp </label></td>
+        <td><input type="date" id="dueDate" name="dueDate"></td>
+      </tr>
+      <tr>
+        <td><label for="Priority">Priority &nbsp </label></td>
+        <td><input type="range" id="priority" name="priority" min="1" max="3"></td>
+      </tr>
+      <tr>
+        <td><input type="button" id="add" value="Add Task" onclick="adddata()"></td>
+      </tr>
+    </table>
+
+
+
+    <results>
+      <h2>Tasks</h2>
+      <table id="input" class="w3-table">
+        <tr>
+          <td><b>Name</b></td>
+          <td><b>Type</b></td>
+          <td><b>Course</b></td>
+          <td><b>Difficulty</b></td>
+          <td><b>Date</b></td>
+          <td><b>Priority</b></td>
+        </tr>
+      </table>
+    </results>
+    <opt>
+      <h2>Optimized</h2>
+      <table id="sort" class="w3-table">
+        <tr>
+          <td><b>Name</b></td>
+          <td><b>Type</b></td>
+          <td><b>Course</b></td>
+          <td><b>Difficulty</b></td>
+          <td><b>Date</b></td>
+          <td><b>Priority</b></td>
+          <td><b>Weight</b></td>
+        </tr>
+      </table>
+    </opt>
+
+    <script>
+    		var itask = document.getElementById("task");
+        var itype = document.getElementById("taskType");
+        var icourse = document.getElementById("course");
+        var idiff = document.getElementById("courseDiff");
+        var idue = document.getElementById("dueDate");
+        var ipriority = document.getElementById("priority");
+        
+      function adddata() {
+      	var ctask = itask;
+        var ctype = itype;
+        var ccourse = icourse;
+        var cdiff = idiff;
+        var cdue = idue;
+        var cpriority = ipriority;
+        var table = document.getElementById("input");
+        var rowCount = table.rows.length;
+        var row = table.insertRow(rowCount);
+        row.insertCell(0).innerHTML = ctask.value;
+        row.insertCell(1).innerHTML = ctype.value;
+        row.insertCell(2).innerHTML = ccourse.value;
+        row.insertCell(3).innerHTML = cdiff.value;
+        row.insertCell(4).innerHTML = cdue.value;
+        row.insertCell(5).innerHTML = cpriority.value;
+        
+        var typeWeight = 0;
+        var diffWeight = cdiff.value/10*.0455;
+        var dueWeight = 0;
+        var priorityWeight = cpriority.value/3*0.134;
+        
+        var dueDate = new Date(cdue.value);
+        var dueMonth = dueDate.getMonth()+1;
+        var dueDay = dueDate.getDate()+1
+        
+        var today = new Date();
+        var currMonth = today.getMonth()+1;
+        var currDay = today.getDate();
+        
+        var tillDue = (dueMonth-currMonth)*30+(dueDay-currDay);
+        
+        if ((tillDue)<=1) {
+        	dueWeight = (10/10)*0.4527;}	
+        else if (((tillDue)<=2)&&((tillDue)>1)){
+        	dueWeight = (9/10)*0.4527;}
+        else if (((tillDue)<=3)&&((tillDue)>2)){
+        	dueWeight = (8/10)*0.4527;}	
+        else if (((tillDue)<=5)&&((tillDue)>3)){
+        	dueWeight = (7/10)*0.4527;}
+        else if (((tillDue)<=7)&&((tillDue)>5)){
+        	dueWeight = (6/10)*0.4527;}
+        else if (((tillDue)<=10)&&((tillDue)>7)){
+        	dueWeight = (5/10)*0.4527;}
+        else if (((tillDue)<=14)&&((tillDue)>10)){
+        	dueWeight = (4/10)*0.4527;}
+        else if (((tillDue)<=20)&&((tillDue)>14)){
+        	dueWeight = (3/10)*0.4527;}
+        else if (((tillDue)<=30)&&((tillDue)>20)){
+        	dueWeight = (2/10)*0.4527;}
+        else if ((tillDue)>30) {
+        	dueWeight = (1/10)*0.4527;}
+        
+        switch(ctype.value) {
+        	case "Project":
+          	typeWeight = (10/10)*0.06;
+            break;
+          case "Report":
+          	typeWeight = (9/10)*0.06;
+            break;
+          case "Essay":
+          	typeWeight = (8/10)*0.06;
+            break;
+          case "Assignment":
+          	typeWeight = (7/10)*0.06;
+            break;  
+          case "Webwork":
+          	typeWeight = (6/10)*0.06;
+            break;
+          case "Pre-Lab":
+          	typeWeight = (5/10)*0.06;
+            break;
+          case "Notes":
+          	typeWeight = (4/10)*0.06;
+            break;
+          case "Study":
+          	typeWeight = (3/10)*0.06;
+            break;
+        }
+        var totalWeight = typeWeight+diffWeight+dueWeight+priorityWeight
+        var storeData = [ctask.value, ccourse.value, totalWeight]
+        
+        
+        var table = document.getElementById("sort");
+        var rowCount = table.rows.length;
+        var row = table.insertRow(rowCount);
+        row.insertCell(0).innerHTML = ctask.value;
+        row.insertCell(1).innerHTML = typeWeight;
+        row.insertCell(2).innerHTML = ccourse.value;
+        row.insertCell(3).innerHTML = diffWeight;
+        row.insertCell(4).innerHTML = dueWeight;
+        row.insertCell(5).innerHTML = priorityWeight;
+        row.insertCell(6).innerHTML = totalWeight;
+      }
+      
+      
+
+		
+    </script>
+
+  </body>
+
+</html>
