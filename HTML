@@ -39,6 +39,15 @@
    <legend> &nbsp Tasks Queue &nbsp </legend><br>
   <p id="demo1"></p>
   <p id="demo2"></p>
+  <p id="demo3"></p>
+  <p id="demo4"></p>
+  <p id="demo5"></p>
+  <p id="demo6"></p>
+  <p id="demo7"></p>
+  <p id="demo8"></p>
+  <p id="demo9"></p>
+  <p id="demo10"></p>
+  
   </results>
     
      <script>
@@ -46,11 +55,10 @@
          var x = document.getElementById("frm1");
          var text = "";
          var i;
-         for (i = 0; i < x.length ;i++) {
+         for (i = 1; i < x.length ;i++) {
            text += x.elements[i].value + "<br>";
+           document.getElementById("demo1").innerHTML = text;
          }
-         document.getElementById("demo1").innerHTML = text;
-         document.getElementById("demo2").innerHTML = text;
        }
     </script>
 
