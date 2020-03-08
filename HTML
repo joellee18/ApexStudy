@@ -69,13 +69,16 @@
              break;
            case 2:
            	 if (text == document.getElementById("demo1").innerHTML) {
-             		alert("NONO!");
+             		confirm("Alert: You have already added this task. Would you like to add it again?");
              		break;
              }
              document.getElementById("demo2").innerHTML = text;
              break;
            case 3:
-             //if (text == document.getElementById("demo1").innerHTML || )
+             /*if (text == (document.getElementById("demo1").innerHTML || document.getElementById("demo2").innerHTML) {
+             		confirm("Alert: You have already added this task. Would you like to add it again?");
+             		break;
+             }*/
              document.getElementById("demo3").innerHTML = text;
              break;
            case 4:
