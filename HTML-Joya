@@ -147,7 +147,6 @@
               
               //if it is identical and you DON'T want to add it
               //
-              break;
             } //close outer if
             
             else {    //if it is not identical...
@@ -162,7 +161,6 @@
 
               //and copy value to bigTable to check against future rows
               bigTable.push([ctask.value, ctype.value, ccourse.value, cdiff.value, cdue.value, cpriority.value]);
-              break;
             } //close inner else
            } //close for loop
           } //close outer else
