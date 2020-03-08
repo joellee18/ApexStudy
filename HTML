@@ -18,20 +18,21 @@
     <input type="text" id="task" name="task"><br><br>
     <label for="taskType">Type &nbsp </label>
     <select id="taskType" name="taskType">
-      <option value="assignment">Assignment</option>
-      <option value="webwork">Webwork</option>
-      <option value="prelab">Pre-Lab</option>
-      <option value="essay">Essay</option>
-      <option value="report">Report</option>
-      <option value="notes">Notes</option>
-      <option value="study">Study</option>
+      <option value="">(Select option)</option>
+      <option value="Assignment">Assignment</option>
+      <option value="Webwork">Webwork</option>
+      <option value="Prelab">Pre-Lab</option>
+      <option value="Essay">Essay</option>
+      <option value="Report">Report</option>
+      <option value="Notes">Notes</option>
+      <option value="Study">Study</option>
     </select><br><br>
     <label for="course">Course &nbsp </label>
     <input type="text" id="cours" name="cours"><br><br>
     <label for="dueDate">Date &nbsp </label>
     <input type="date" id="dueDate" name="dueDate"><br><br>
-    <label for="priority">Priority &nbsp </label>
-    <input type="range" id="priority" name="priority" min="0" max="5"><br><br>   
+    <label for="Priority">Priority &nbsp </label>
+    <input type="range" id="priority" name="priority" min="1" max="3"><br><br>   
     <input type="button" onclick="myFunction()" value="Add Task"> <br><br> 
    </fieldset><br><br> 
   </form>
@@ -55,7 +56,7 @@
          var x = document.getElementById("frm1");
          var text = "";
          var i;
-         for (i = 1; i < x.length ;i++) {
+         for (i = 1; i < x.length-1 ;i++) {
            text += x.elements[i].value + "<br>";
            document.getElementById("demo1").innerHTML = text;
          }
