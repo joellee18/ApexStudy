@@ -110,6 +110,7 @@
         var ipriority = document.getElementById("priority");
         const task = []; 
         var taskAll = [];
+        var sort =[];
 				
                 
         var bigTable = [
@@ -302,14 +303,12 @@
             break;
         }
         var totalWeight = typeWeight+diffWeight+dueWeight+priorityWeight+durWeight;
-         
-        
-        //task.weight = totalWeight;
-        //task.sort(function(a,b){return b - a});
-        //task.name = ctask.value;
-        //task.course = ccourse.value;
-        task.push({weigth: totalWeight, name: ctask.value, course: ccourse.value});  
+
+        task.push({value: totalWeight, name: ctask.value, course: ccourse.value});  
         taskAll=task.slice();
+        sort=taskAll.sort(function (a, b) {
+  return b.value - a.value;
+});
        	console.log(taskAll);
                 
         var table = document.getElementById("sort");
