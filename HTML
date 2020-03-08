@@ -7,15 +7,16 @@
       <! for mobile screen rendering>
   </head>
   <body>
-  <div class="titleBlock"></div>
+  <div class="titleBlockUpper"></div>
+  <div class="titleBlockLower"></div>
   <h1>APEX Study</h1>
     
     <form id="frm1" action="/action_page.php">
       <fieldset>
       <legend> &nbsp Task &nbsp </legend><br>
-        <label for="task">Name Task &nbsp </label>
+        <label for="task">Name &nbsp </label>
         <input type="text" id="task" name="task"><br><br>
-        <label for="taskType">Task Type &nbsp </label>
+        <label for="taskType">Type &nbsp </label>
         <select id="taskType" name="taskType">
           <option value="assignment">Assignment</option>
           <option value="webwork">Webwork</option>
@@ -31,15 +32,12 @@
         <input type="date" id="dueDate" name="dueDate"><br><br>
         <label for="priority">Priority &nbsp </label>
         <input type="range" id="priority" name="priority" min="0" max="5"><br><br>   
-        <input type="button" onclick="myFunction()" value="Add Task" id="countButton"><br><br> 
-        
-        
-        <!-- Copied from "https://www.sitepoint.com/community/t/how-to-count-the-number-of-times-a-button-is-clicked/27287" -->
-        
-        <!--<input type="button" value="Count" id="countButton" /> -->
+        <input type="button" onclick="myFunction()" value="Add Task"> <br><br> 
 
-        <p>You have added <span id="displayCount">0</span> tasks.</p>
-        
+        <p>You have added <span id="demo2">0</span> tasks.</p>
+
+        <p id="demo1"></p>
+
         <script>
         function myFunction() {
           var x = document.getElementById("frm1");
@@ -48,19 +46,10 @@
           for (i = 0; i < x.length ;i++) {
             text += x.elements[i].value + "<br>";
           }
-          document.getElementById("demo").innerHTML = text;
+          document.getElementById("demo1").innerHTML = text;
         }
-        
-        var count = 0;
-          var button = document.getElementById("countButton");
-          var display = document.getElementById("displayCount");
+				</script>
 
-          button.onclick = function(){
-            count++;
-            display.innerHTML = count;
-          }
-	</script>
-        
       </fieldset><br><br> 
     </form>
 
