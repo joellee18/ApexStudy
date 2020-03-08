@@ -126,37 +126,44 @@
               //if it is identical...
               //check to see if you still want to add it
               if (confirm("Alert: You have already added this task. Would you like to add it again?")){
-              	//if you still want to add the identical row
-                //print in Tasks Table
-              	row.insertCell(0).innerHTML = ctask.value;
-                row.insertCell(1).innerHTML = ctype.value;
-                row.insertCell(2).innerHTML = ccourse.value;
-                row.insertCell(3).innerHTML = cdiff.value;
-                row.insertCell(4).innerHTML = cdue.value;
-                row.insertCell(5).innerHTML = cpriority.value;
-                
-                bigTable.push([ctask.value, ctype.value, ccourse.value, cdiff.value, cdue.value, cpriority.value]);
+              //if you still want to add the identical row
                 flag = 1;
-                break;
-              } //close inner if
-
+              }
+							else {
               //if it is identical and you DON'T want to add it
-              flag = 2;
-            } //close outer if
+              	flag = 2;
+              }
+            } //close if loop
           } //close for loop
-          if (flag != 1 && flag != 2){
-            row.insertCell(0).innerHTML = ctask.value;
-            row.insertCell(1).innerHTML = ctype.value;
-            row.insertCell(2).innerHTML = ccourse.value;
-            row.insertCell(3).innerHTML = cdiff.value;
-            row.insertCell(4).innerHTML = cdue.value;
-            row.insertCell(5).innerHTML = cpriority.value;
+          
+          switch(flag) {
+            case 1: //you want to add an identical row
+              row.insertCell(0).innerHTML = ctask.value;
+              row.insertCell(1).innerHTML = ctype.value;
+              row.insertCell(2).innerHTML = ccourse.value;
+              row.insertCell(3).innerHTML = cdiff.value;
+              row.insertCell(4).innerHTML = cdue.value;
+              row.insertCell(5).innerHTML = cpriority.value;
 
-            //and copy value to bigTable to check against future rows
-            bigTable.push([ctask.value, ctype.value, ccourse.value, cdiff.value, cdue.value, cpriority.value]);
-          } //close if loop
-          } //close outer else
-				} //close function
+              bigTable.push([ctask.value, ctype.value, ccourse.value, cdiff.value, cdue.value, cpriority.value]);
+              break;
+            case 2: //you don't want to add an identical row
+              bigTable.push([ctask.value, ctype.value, ccourse.value, cdiff.value, cdue.value, cpriority.value]);
+              break;
+            default:
+              row.insertCell(0).innerHTML = ctask.value;
+              row.insertCell(1).innerHTML = ctype.value;
+              row.insertCell(2).innerHTML = ccourse.value;
+              row.insertCell(3).innerHTML = cdiff.value;
+              row.insertCell(4).innerHTML = cdue.value;
+              row.insertCell(5).innerHTML = cpriority.value;
+
+              //and copy value to bigTable to check against future rows
+              bigTable.push([ctask.value, ctype.value, ccourse.value, cdiff.value, cdue.value, cpriority.value]);
+          }
+          flag = 0;
+        } //close outer else
+		  } //close function
       
     </script>
   </body>
