@@ -101,7 +101,6 @@
         </tr>
       </table>
     </opt>
-
     <script>
     		var itask = document.getElementById("task");
         var itype = document.getElementById("taskType");
@@ -110,6 +109,7 @@
         var idue = document.getElementById("dueDate");
         var idur = document.getElementById("duration");
         var ipriority = document.getElementById("priority");
+        var weights = [];
         
       function adddata() {
       	var ctask = itask;
@@ -226,9 +226,11 @@
           	typeWeight = (3/10)*0.06;
             break;
         }
-        var totalWeight = typeWeight+diffWeight+dueWeight+priorityWeight+durWeight
-        var storeData = [ctask.value, ccourse.value, totalWeight]
-       	console.log(totalWeight);
+        var totalWeight = typeWeight+diffWeight+dueWeight+priorityWeight+durWeight;
+                  
+        weights.push(totalWeight);
+        weights.sort(function(a,b){return b - a});
+       	console.log(weights);
                 
         var table = document.getElementById("sort");
         var rowCount = table.rows.length;
