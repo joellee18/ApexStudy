@@ -309,41 +309,13 @@
         var table = document.getElementById("sort");
         var rowCount = table.rows.length;
         var row = table.insertRow(rowCount);
-        row.insertCell(0).innerHTML = sort[0].name;
-        row.insertCell(1).innerHTML = sort[0].course;
-        row.insertCell(2).innerHTML = sort[0].value;
+        for (var i=0; i<=sort.length; i++) {
+        	row.insertCell(0).innerHTML = sort[i].name;
+        	row.insertCell(1).innerHTML = sort[i].course;
+        	row.insertCell(2).innerHTML = sort[i].value;
+        }
         
-        row.insertCell(0).innerHTML = sort[1].name;
-        row.insertCell(1).innerHTML = sort[1].course;
-        row.insertCell(2).innerHTML = sort[1].value;
         
-        row.insertCell(0).innerHTML = sort[2].name;
-        row.insertCell(1).innerHTML = sort[2].course;
-        row.insertCell(2).innerHTML = sort[2].value;
-        
-        row.insertCell(0).innerHTML = sort[3].name;
-        row.insertCell(1).innerHTML = sort[3].course;
-        row.insertCell(2).innerHTML = sort[3].value;
-        
-        row.insertCell(0).innerHTML = sort[4].name;
-        row.insertCell(1).innerHTML = sort[4].course;
-        row.insertCell(2).innerHTML = sort[4].value;
-        
-        row.insertCell(0).innerHTML = sort[5].name;
-        row.insertCell(1).innerHTML = sort[5].course;
-        row.insertCell(2).innerHTML = sort[5].value;
-        
-        row.insertCell(0).innerHTML = sort[6].name;
-        row.insertCell(1).innerHTML = sort[6].course;
-        row.insertCell(2).innerHTML = sort[6].value;
-        
-        row.insertCell(0).innerHTML = sort[7].name;
-        row.insertCell(1).innerHTML = sort[7].course;
-        row.insertCell(2).innerHTML = sort[7].value;
-        
-        row.insertCell(0).innerHTML = sort[8].name;
-        row.insertCell(1).innerHTML = sort[8].course;
-        row.insertCell(2).innerHTML = sort[8].value;
       }
 		
     </script>
