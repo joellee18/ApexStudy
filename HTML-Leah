@@ -15,11 +15,11 @@
     <h2> Add Task </h2>
     <table>
       <tr>
-        <td><label for="task">Name &nbsp </label></td>
+        <td><label for="task">Name</label></td>
         <td><input type="text" id="task" name="task"></td>
       </tr>
       <tr>
-        <td><label for="taskType">Type &nbsp </label></td>
+        <td><label for="taskType">Type</label></td>
         <td><select id="taskType" name="taskType">
             <option value="">(Select option)</option>
             <option value="Assignment">Assignment</option>
@@ -34,19 +34,35 @@
         </td>
       </tr>
       <tr>
-        <td><label for="course">Course &nbsp </label></td>
+        <td><label for="course">Course</label></td>
         <td><input type="text" id="course" name="course"><br></td>
       </tr>
       <tr>
-        <td><label for="courseDiff">Difficulty &nbsp </label></td>
+        <td><label for="courseDiff">Difficulty</label></td>
         <td><input type="range" id="courseDiff" name="courseDiff" min="1" max="10"></td>
       </tr>
       <tr>
-        <td><label for="dueDate">Date &nbsp </label></td>
+        <td><label for="dueDate">Date</label></td>
         <td><input type="date" id="dueDate" name="dueDate"></td>
       </tr>
       <tr>
-        <td><label for="Priority">Priority &nbsp </label></td>
+        <td><label for="duration">Duration</label></td>
+        <td><select id="duration" name="duration">
+            <option value="">(Select option)</option>
+            <option value="48hrs">48hrs+</option>
+            <option value="24hrs">24hrs+</option>
+            <option value="10hrs">10hrs+</option>
+            <option value="6hrs">6hrs+</option>
+            <option value="4hrs">4hrs+</option>
+            <option value="3hrs">3hrs+</option>
+            <option value="2hrs">2hrs+</option>
+            <option value="1hr">1hr+</option>
+            <option value="30mins">30mins+</option>
+          </select>
+          </td>
+      </tr>
+      <tr>
+        <td><label for="Priority">Priority</label></td>
         <td><input type="range" id="priority" name="priority" min="1" max="3"></td>
       </tr>
       <tr>
@@ -65,6 +81,7 @@
           <td><b>Course</b></td>
           <td><b>Difficulty</b></td>
           <td><b>Date</b></td>
+          <td><b>Duration</b></td>
           <td><b>Priority</b></td>
         </tr>
       </table>
@@ -78,6 +95,7 @@
           <td><b>Course</b></td>
           <td><b>Difficulty</b></td>
           <td><b>Date</b></td>
+          <td><b>Duration</b></td>
           <td><b>Priority</b></td>
           <td><b>Weight</b></td>
         </tr>
@@ -90,6 +108,7 @@
         var icourse = document.getElementById("course");
         var idiff = document.getElementById("courseDiff");
         var idue = document.getElementById("dueDate");
+        var idur = document.getElementById("duration");
         var ipriority = document.getElementById("priority");
         
       function adddata() {
@@ -98,6 +117,7 @@
         var ccourse = icourse;
         var cdiff = idiff;
         var cdue = idue;
+        var cdur = idur;
         var cpriority = ipriority;
         var table = document.getElementById("input");
         var rowCount = table.rows.length;
@@ -107,12 +127,47 @@
         row.insertCell(2).innerHTML = ccourse.value;
         row.insertCell(3).innerHTML = cdiff.value;
         row.insertCell(4).innerHTML = cdue.value;
-        row.insertCell(5).innerHTML = cpriority.value;
+        row.insertCell(5).innerHTML = cdur.value;
+        row.insertCell(6).innerHTML = cpriority.value;
         
         var typeWeight = 0;
         var diffWeight = cdiff.value/10*.0455;
         var dueWeight = 0;
-        var priorityWeight = cpriority.value/3*0.134;
+        var durWeight = 0;
+        var priorityWeight = cpriority.value/3*0.3078;
+        
+        switch(cdur.value) {
+        	case "48hrs":
+          	durWeight = (10/10)*0.134;
+            break;
+          case "24hrs":
+          	durWeight = (9/10)*0.134;
+            break;
+          case "16hrs":
+          	durWeight = (8/10)*0.134;
+            break;
+          case "10hrs":
+          	durWeight = (7/10)*0.134;
+          	break;
+          case "6hrs":
+          	durWeight = (6/10)*0.134;
+          	break;
+          case "4hrs":
+          	durWeight = (5/10)*0.134;
+          	break;
+          case "3hrs":
+          	durWeight = (4/10)*0.134;
+          	break;
+          case "2hrs":
+          	durWeight = (3/10)*0.134;
+          	break;
+          case "1hr":
+          	durWeight = (2/10)*0.134;
+          	break;
+          case "30mins":
+          	durWeight = (1/10)*0.134;
+          	break;   
+        }
         
         var dueDate = new Date(cdue.value);
         var dueMonth = dueDate.getMonth()+1;
@@ -171,10 +226,10 @@
           	typeWeight = (3/10)*0.06;
             break;
         }
-        var totalWeight = typeWeight+diffWeight+dueWeight+priorityWeight
+        var totalWeight = typeWeight+diffWeight+dueWeight+priorityWeight+durWeight
         var storeData = [ctask.value, ccourse.value, totalWeight]
-        
-        
+       	console.log(totalWeight);
+                
         var table = document.getElementById("sort");
         var rowCount = table.rows.length;
         var row = table.insertRow(rowCount);
@@ -183,12 +238,10 @@
         row.insertCell(2).innerHTML = ccourse.value;
         row.insertCell(3).innerHTML = diffWeight;
         row.insertCell(4).innerHTML = dueWeight;
-        row.insertCell(5).innerHTML = priorityWeight;
-        row.insertCell(6).innerHTML = totalWeight;
+        row.insertCell(5).innerHTML = durWeight;
+        row.insertCell(6).innerHTML = priorityWeight;
+        row.insertCell(7).innerHTML = totalWeight;
       }
-      
-      
-
 		
     </script>
 
