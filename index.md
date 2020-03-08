@@ -7,6 +7,104 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <!-- for mobile screen rendering-->
   </head>
+  <style> h1 {
+  font-family: 'Roboto';
+  position: absolute;
+  left: 80px;
+  top: 12px;
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 900;
+  color: white;
+}
+
+.titleBlockUpper {
+	 z-index: -1;
+  position: absolute;
+  width: 270px;
+  height: 60px;
+  left: 60px;
+  top: 40px;
+  background: #37376b;
+}
+
+.titleBlockLower {
+	 z-index: -2;
+  position: absolute;
+  width: 270px;
+  height: 60px;
+  left: 70px;
+  top: 50px;
+  background: #36363b;
+}
+
+label {
+  font-family: 'Roboto';
+  font-size: 15px;
+  font-style: normal;
+  font-weight: bold;
+  color: white;
+}
+
+h2 {
+  position: absolute;
+  top: 110px;
+  left: 60px;
+  font-family: 'Roboto';
+  font-size: 30px;
+  font-style: normal;
+  font-weight: bold;
+  color: white;
+}
+
+
+fieldset {
+	position: absolute;
+  left: 60px;
+  top: 120px;
+  display: block;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+  border: 20px solid;
+  border-color: white;
+}
+
+results {
+	position: absolute;
+  left:350px;
+  top: 0px;
+}
+
+opt {
+	position: absolute;
+  left:900px;
+  top: 0px;
+}
+
+body {
+  background-color: #201740;
+}
+
+table { 
+  position: absolute;
+  top: 180px;
+  left: 60px;
+  padding: 5px;
+  background:  #37376b;
+}
+th, td {
+  padding: 10px;
+  text-align: left;
+  font-family: 'Roboto';
+  font-size: 15px;
+  font-style: normal;
+  font-weight: normal;
+  color: white;
+}
+
+</style>
 
   <body>
     <div class="titleBlockUpper"></div>
