@@ -65,47 +65,86 @@
            taskDetailCount++;
            }
      var taskCount = (taskDetailCount/6);
-         switch (taskCount){
-           case 1:
-             document.getElementById("demo1").innerHTML = text;
-             break;
+       switch (taskCount){
+         case 1:
+           document.getElementById("demo1").innerHTML = text;
+           break;
+            
            case 2:
            	 if (text == document.getElementById("demo1").innerHTML) {
-             		confirm("Alert: You have already added this task. Would you like to add it again?");
-             		break;
+             		if (confirm("Alert: You have already added this task. Would you like to add it again?"))
+                	document.getElementById("demo2").innerHTML = text;
              }
-             document.getElementById("demo2").innerHTML = text;
+             else
+             		document.getElementById("demo2").innerHTML = text;
              break;
            case 3:
-             /*if (text == (document.getElementById("demo1").innerHTML || document.getElementById("demo2").innerHTML)) {
-             		confirm("Alert: You have already added this task. Would you like to add it again?");
-             		break;
-             }*/
-             document.getElementById("demo3").innerHTML = text;
+             if (text == document.getElementById("demo1").innerHTML || text == document.getElementById("demo2").innerHTML) {
+             		if (confirm("Alert: You have already added this task. Would you like to add it again?"))
+                	document.getElementById("demo3").innerHTML = text;
+             }
+             else
+             		document.getElementById("demo3").innerHTML = text;
              break;
            case 4:
-             document.getElementById("demo4").innerHTML = text;
+             if (text == document.getElementById("demo1").innerHTML || text == document.getElementById("demo2").innerHTML || text == document.getElementById("demo3").innerHTML) {
+             		if (confirm("Alert: You have already added this task. Would you like to add it again?"))
+                	document.getElementById("demo4").innerHTML = text;
+             }
+             else
+             		document.getElementById("demo4").innerHTML = text;
              break;
            case 5:
-             document.getElementById("demo5").innerHTML = text;
+             if (text == document.getElementById("demo1").innerHTML || text == document.getElementById("demo2").innerHTML || text == document.getElementById("demo3").innerHTML || text == document.getElementById("demo4").innerHTML) {
+             		if (confirm("Alert: You have already added this task. Would you like to add it again?"))
+                	document.getElementById("demo5").innerHTML = text;
+             }
+             else
+             		document.getElementById("demo5").innerHTML = text;
              break;
            case 6:
-             document.getElementById("demo6").innerHTML = text;
+             if (text == document.getElementById("demo1").innerHTML || text == document.getElementById("demo2").innerHTML || text == document.getElementById("demo3").innerHTML || text == document.getElementById("demo4").innerHTML || text == document.getElementById("demo5").innerHTML) {
+             		if (confirm("Alert: You have already added this task. Would you like to add it again?"))
+                	document.getElementById("demo6").innerHTML = text;
+             }
+             else
+             		document.getElementById("demo6").innerHTML = text;
              break;
            case 7:
-             document.getElementById("demo7").innerHTML = text;
+             if (text == document.getElementById("demo1").innerHTML || text == document.getElementById("demo2").innerHTML || text == document.getElementById("demo3").innerHTML || text == document.getElementById("demo4").innerHTML || text == document.getElementById("demo5").innerHTML  || text == document.getElementById("demo6").innerHTML) {
+             		if (confirm("Alert: You have already added this task. Would you like to add it again?"))
+                	document.getElementById("demo7").innerHTML = text;
+             }
+             else
+             		document.getElementById("demo7").innerHTML = text;
              break;
            case 8:
-             document.getElementById("demo8").innerHTML = text;
+             if (text == document.getElementById("demo1").innerHTML || text == document.getElementById("demo2").innerHTML || text == document.getElementById("demo3").innerHTML || text == document.getElementById("demo4").innerHTML || text == document.getElementById("demo5").innerHTML  || text == document.getElementById("demo6").innerHTML || text == document.getElementById("demo7").innerHTML) {
+             		if (confirm("Alert: You have already added this task. Would you like to add it again?"))
+                	document.getElementById("demo8").innerHTML = text;
+             }
+             else
+             		document.getElementById("demo8").innerHTML = text;
              break;
            case 9:
-             document.getElementById("demo9").innerHTML = text;
+             if (text == document.getElementById("demo1").innerHTML || text == document.getElementById("demo2").innerHTML || text == document.getElementById("demo3").innerHTML || text == document.getElementById("demo4").innerHTML || text == document.getElementById("demo5").innerHTML  || text == document.getElementById("demo6").innerHTML || text == document.getElementById("demo7").innerHTML || text == document.getElementById("demo8").innerHTML) {
+             		if (confirm("Alert: You have already added this task. Would you like to add it again?"))
+                	document.getElementById("demo9").innerHTML = text;
+             }
+             else
+             		document.getElementById("demo9").innerHTML = text;
              break;
            case 10:
-             document.getElementById("demo10").innerHTML = text;
+             if (text == document.getElementById("demo1").innerHTML || text == document.getElementById("demo2").innerHTML || text == document.getElementById("demo3").innerHTML || text == document.getElementById("demo4").innerHTML || text == document.getElementById("demo5").innerHTML  || text == document.getElementById("demo6").innerHTML || text == document.getElementById("demo7").innerHTML || text == document.getElementById("demo8").innerHTML || text == document.getElementById("demo9").innerHTML) {
+             		if (confirm("Alert: You have already added this task. Would you like to add it again?"))
+                	document.getElementById("demo10").innerHTML = text;
+             }
+             else
+             		document.getElementById("demo10").innerHTML = text;
              break;
            }
      }
+     
      </script>
 
   </body>
