@@ -2,7 +2,7 @@ h1 {
   font-family: 'Roboto';
   position: absolute;
   left: 80px;
-  top: 60px;
+  top: 12px;
   font-size: 45px;
   font-style: normal;
   font-weight: 900;
@@ -10,7 +10,7 @@ h1 {
 }
 
 .titleBlockUpper {
-  z-index: -1;
+	 z-index: -1;
   position: absolute;
   width: 260px;
   height: 60px;
@@ -20,7 +20,7 @@ h1 {
 }
 
 .titleBlockLower {
-  z-index: -2;
+	 z-index: -2;
   position: absolute;
   width: 260px;
   height: 60px;
@@ -46,6 +46,9 @@ legend {
 }
 
 fieldset {
+	position: absolute;
+  left: 10px;
+  top: 120px;
   display: block;
   margin-left: 50px;
   margin-right: 50px;
@@ -60,3 +63,4 @@ fieldset {
 body {
   background-color: #201740;
 }
+
