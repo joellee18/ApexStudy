@@ -61,14 +61,12 @@ fieldset {
 results {
 	position: absolute;
   left:400px;
-  top: 130px;
+  top: 100px;
   display: block;
   padding-top: 1em;
   padding-bottom: 1em;
   padding-left: 1em;
   padding-right: 1em;
-  border: 20px solid;
-  border-color: white;
 }
 
 body {
