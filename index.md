@@ -140,7 +140,7 @@ th, td {
         <td><input type="range" id="courseDiff" name="courseDiff" min="1" max="10"></td>
       </tr>
       <tr>
-        <td><label for="dueDate">Date</label></td>
+        <td><label for="dueDate">Due</label></td>
         <td><input type="date" id="dueDate" name="dueDate"></td>
       </tr>
       <tr>
@@ -178,7 +178,7 @@ th, td {
           <td><b>Type</b></td>
           <td><b>Course</b></td>
           <td><b>Difficulty</b></td>
-          <td><b>Date</b></td>
+          <td><b>Due</b></td>
           <td><b>Duration</b></td>
           <td><b>Priority</b></td>
         </tr>
@@ -192,7 +192,7 @@ th, td {
           <td><b>Type</b></td>
           <td><b>Course</b></td>
           <td><b>Difficulty</b></td>
-          <td><b>Date</b></td>
+          <td><b>Due</b></td>
           <td><b>Duration</b></td>
           <td><b>Priority</b></td>
           <td><b>Weight</b></td>
